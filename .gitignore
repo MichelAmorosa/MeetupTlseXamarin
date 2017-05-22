@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/GandalfApp6/GandalfApp6/bin/Debug
+/GandalfApp6/GandalfApp6/obj/Debug
+/GandalfApp6/GandalfApp6.Android/bin/Debug
+/GandalfApp6/GandalfApp6.Android/obj
+/GandalfApp6/GandalfApp6.iOS/obj/iPhone/Debug
+/GandalfApp6/GandalfApp6.UWP/bin/x86/Debug
+/GandalfApp6/GandalfApp6.UWP/obj/x86/Debug
+/packages

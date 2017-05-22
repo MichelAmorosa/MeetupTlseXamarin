@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GandalfApp6"
+             x:Class="GandalfApp6.MainPage"
+             Padding="0, 30, 0, 0">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ProfilePicConverter x:Key="profileConv"></local:ProfilePicConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView x:Name="membersList" ItemTapped="membersList_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="4" RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Name}" Style="{StaticResource NameLabel}" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0"></Label>
+                        <Label Text="{Binding DisplayHealth}" HorizontalOptions="Start" Grid.Row="0" Grid.Column="1"></Label>
+
+                        <local:ProfilePic TintColor="{Binding HealthColor}" Grid.Row="0" Grid.Column="2" Aspect="AspectFit" Source="{Binding Race, Converter={StaticResource profileConv}}"></local:ProfilePic>
+
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
